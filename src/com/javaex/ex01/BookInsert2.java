@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 import java.sql.SQLException;
 
-public class BookInsert {
+public class BookInsert2 {
 
 	public static void main(String[] args) {
 		// 0. import java.sql.*;
@@ -22,7 +22,13 @@ public class BookInsert {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 			System.out.println("접쏙썽공");
-		    // 3. SQL문 준비 / 바인딩 / 실행
+			
+			
+			
+			//////////////////////////////////////////////////
+			//순정만화/강풀
+			////////////////////////////////////////////////
+		    // 3. SQL문 준비 / 바인딩 / 실행  --순정만화/강풀
 		    String query = "";
 		    query += " insert into book ";
 		    query += " values (seq_book_id.nextval, ?, ?, ?, ?) ";
@@ -31,16 +37,30 @@ public class BookInsert {
 		    pstmt = conn.prepareStatement(query);
 		    
 		    //바인딩
-		    pstmt.setString(1, "패션왕");
-		    pstmt.setString(2, "중앙북스");
-		    pstmt.setString(3,"2012-02-22" );
-		    pstmt.setInt(4, 4);
+		    pstmt.setString(1, "순정만화");
+		    pstmt.setString(2, "재미주의");
+		    pstmt.setString(3,"2011-08-03" );
+		    pstmt.setInt(4, 5);
 		    
 		    //실행
 
 		   int count = pstmt.executeUpdate();
 		   //결과처리
 		   System.out.println(count + "건이 실행되었습니다.");
+		   
+		   //////////////////////////////////////////
+		   //오직두사람/김영하
+		   /////////////////////////////////////////
+		   pstmt.setString(1, "오직두사람");
+		   pstmt.setString(2, "문학동네");
+		   pstmt.setString(3, "2017-05-04");
+		   pstmt.setInt(4, 6);
+		   
+		   //실행
+		   int count2 = pstmt.executeUpdate();
+		   //결과처리
+		   System.out.println(count2 + "건이 실행되었습니다.");
+		   
 		} catch (ClassNotFoundException e) {
 		    System.out.println("error: 드라이버 로딩 실패 - " + e);
 		} catch (SQLException e) {
