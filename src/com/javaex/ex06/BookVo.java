@@ -1,4 +1,4 @@
-package com.javaex.ex05;
+package com.javaex.ex06;
 
 public class BookVo {
 	private int bookId;
@@ -9,6 +9,20 @@ public class BookVo {
 	
 	public BookVo() {
 	}
+
+	
+	
+	
+	public BookVo(String title, String pubs, String pubDate, int authorId) {
+	
+		this.title = title;
+		this.pubs = pubs;
+		this.pubDate = pubDate;
+		this.authorId = authorId;
+	}
+
+
+
 
 	public BookVo(int bookId, String title, String pubs, String pubDate, int authorId) {
 		this.bookId = bookId;

@@ -1,21 +1,27 @@
-package com.javaex.ex05;
+package com.javaex.ex08;
 
-public class BookVo {
+public class BookAllVo {
+	
 	private int bookId;
 	private String title;
 	private String pubs;
 	private String pubDate;
 	private int authorId;
+	private String authorName;
+	private String authorDesc;
 	
-	public BookVo() {
+	public BookAllVo() {
 	}
-
-	public BookVo(int bookId, String title, String pubs, String pubDate, int authorId) {
+	
+	public BookAllVo(int bookId, String title, String pubs, String pubDate, int authorId, String authorName,
+			String authorDesc) {
 		this.bookId = bookId;
 		this.title = title;
 		this.pubs = pubs;
 		this.pubDate = pubDate;
 		this.authorId = authorId;
+		this.authorName = authorName;
+		this.authorDesc = authorDesc;
 	}
 
 	public int getBookId() {
@@ -58,13 +64,21 @@ public class BookVo {
 		this.authorId = authorId;
 	}
 
-	@Override
-	public String toString() {
-		return "BookVo [bookId=" + bookId + ", title=" + title + ", pubs=" + pubs + ", pubDate=" + pubDate
-				+ ", authorId=" + authorId + "]";
+	public String getAuthorName() {
+		return authorName;
 	}
-	
-	
+
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public String getAuthorDesc() {
+		return authorDesc;
+	}
+
+	public void setAuthorDesc(String authorDesc) {
+		this.authorDesc = authorDesc;
+	}
 	
 	
 	
